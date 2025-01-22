@@ -5,7 +5,7 @@
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white)
 
 
-> Mais um projeto do Bootcamp front-end do zero da [DIO.me](https://web.dio.me/) em colaboração com a Ri Happy
+> projeto disponibilizado pela [DIO.me](https://web.dio.me/) para o Bootcamp Ri Happy - Front-end do Zero
 
 -------
 Uma jornada para quem não tem medo do desconhecido. O caminho para o Mundo Invertido é incerto, repleto de obstáculos e perigos. Porém, a recompensa é grande: salvar Hawkings e o mundo todo das garras de Vecna. Você está preparado(a)?
@@ -14,7 +14,7 @@ Uma jornada para quem não tem medo do desconhecido. O caminho para o Mundo Inve
 
 🔗 [Veja o Mundo Invertido](https://codebytayne.github.io/mundo-invertido/)
 
-O projeto consiste em recriar o estilo css do mundo invertido a partir de um prototipo do [Figma](https://www.figma.com/design/I3Q42CcVUziRN3iMfTrbfb/Stranger-Things), fornecido pelos experts [Diogo Medeiros Mainardes](https://www.linkedin.com/in/diogomainardes/), [Michele Queiroz Ambrosio](https://www.linkedin.com/in/michele-ambrosio-a4899661/) e [Renan Johannsen de Paula](https://www.linkedin.com/in/renanjpaula/) da [DIO.me](https://web.dio.me/)
+O projeto consiste em recriar usando css do mundo invertido a partir de um prototipo do [Figma](https://www.figma.com/design/I3Q42CcVUziRN3iMfTrbfb/Stranger-Things), fornecido pelos experts [Diogo Medeiros Mainardes](https://www.linkedin.com/in/diogomainardes/), [Michele Queiroz Ambrosio](https://www.linkedin.com/in/michele-ambrosio-a4899661/) e [Renan Johannsen de Paula](https://www.linkedin.com/in/renanjpaula/) da [DIO.me](https://web.dio.me/)
 
 ![Texto alternativo](src/images/demo/demo.gif)
 
