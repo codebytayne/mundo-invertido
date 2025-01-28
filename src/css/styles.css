@@ -57,9 +57,12 @@
 }
 
 
-body {
-  background: var(--page-background);
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
+
 
 h1,
 h2,
@@ -98,8 +101,10 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  justify-content: center; /* Garante centralização vertical */
+  min-height: 100vh;
 }
+
 
 main::before {
   content: "";
@@ -107,10 +112,12 @@ main::before {
   height: 100%;
   position: absolute;
   background: var(--page-background) no-repeat,
-    url("../images/backgrounds/florest.png") no-repeat;
+              url("../images/backgrounds/florest.png") no-repeat;
   background-size: cover;
+  background-position: center;
   z-index: -1;
 }
+
 
 input,
 textarea {
@@ -139,12 +146,13 @@ textarea:focus-visible {
 
 header {
   background-color: var(--header-background-color);
-  min-height: 850px;
+  min-height: 100vh; /* Garante que ocupa pelo menos a altura da tela */
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
+
 
 header::before {
   content: "";
@@ -378,15 +386,15 @@ section {
 /*** FOOTER STYLES ***/
 
 footer {
-  padding: 60px 0;
+  padding: 60px 20px;
   background-color: var(--footer-background-color);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  overflow: hidden;
 }
+
 
 footer p {
   max-width: 700px;
@@ -396,20 +404,191 @@ footer p {
 footer::before,
 footer::after {
   content: "";
-  width: 300px;
-  height: 200px;
+  width: 20%; /* Ajuste dinâmico baseado na largura da tela */
+  height: auto; /* Mantém a proporção da imagem */
   background: url("../images/footer/tape.svg") no-repeat;
   background-size: contain;
   position: absolute;
-  bottom: -30px;
+  bottom: -10%; /* Mantém alinhamento, mas relativo */
 }
 
 footer::before {
-  left: -50px;
+  left: -5%; /* Ajuste responsivo */
   transform: rotateZ(-10deg);
 }
 
 footer::after {
-  right: -50px;
+  right: -5%; /* Ajuste responsivo */
   transform: rotateZ(10deg);
 }
+
+/* Regras para telas pequenas */
+@media (max-width: 576px) {
+  footer::before,
+  footer::after {
+    width: 30%; /* Imagens menores para dispositivos móveis */
+    bottom: -5%; /* Ajuste de posição */
+  }
+}
+
+/* Regras para telas intermediárias */
+@media (max-width: 992px) {
+  footer::before,
+  footer::after {
+    width: 25%; /* Ajuste para tablets */
+  }
+}
+
+
+/* Medias queries*/
+
+/* Mobile - até 576px */
+@media (max-width: 576px) {
+  h1, h2, h3 {
+    font-size: 2rem;
+  }
+
+  p, input, textarea, label {
+    font-size: 0.875rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+
+  .header-content img {
+    width: 100%;
+  }
+
+  .world-characters {
+    display: none; /* Esconde elementos muito detalhados para telas pequenas */
+  }
+
+  section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #section-inverted-world .section-texts,
+  #section-stranger-things-trailer .section-texts {
+    width: 100%;
+    text-align: center;
+  }
+
+  #section-stranger-things-gallery .gallery-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  #section-stranger-things-gallery .gallery-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  #section-form h2 {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  #section-form .form-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  footer p {
+    font-size: 0.875rem;
+    text-align: center;
+    margin: 0 10px;
+  }
+}
+
+/* Tablet - até 768px */
+@media (max-width: 768px) {
+  h1, h2, h3 {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  #section-inverted-world .section-texts,
+  #section-stranger-things-trailer .section-texts {
+    width: 80%;
+  }
+
+  #section-stranger-things-gallery .gallery-container {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  #section-stranger-things-gallery .gallery-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  #section-form .form-content {
+    gap: 30px;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop médio - até 992px */
+@media (max-width: 992px) {
+  header {
+    min-height: 600px;
+  }
+
+  .header-content {
+    padding: 60px 15px;
+  }
+
+  h1, h2, h3 {
+    font-size: 2.75rem;
+  }
+
+  section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .world-characters {
+    height: 300px;
+  }
+
+  #section-stranger-things-gallery .gallery-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Desktop grande - acima de 1200px */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  h1, h2, h3 {
+    font-size: 3.5rem;
+  }
+
+  .world-characters {
+    height: 100%;
+  }
+
+  #section-stranger-things-gallery .gallery-container {
+    gap: 40px;
+  }
+
+  #section-stranger-things-gallery .gallery-image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+
